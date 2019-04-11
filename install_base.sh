@@ -34,7 +34,7 @@ sed -i '1iServer = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 
 # # update repo and install base os
 pacman -Sy
-pacstrap /mnt -i base base-devel vim zsh git
+pacstrap -i /mnt base base-devel vim zsh git
 
 # # generate fstab list, and then remove /mnt
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -42,3 +42,4 @@ sed -i "s/\/mnt//g" /mnt/etc/fstab
 
 # # copy arch_install.sh to /mnt
 cp arch_install.sh /mnt
+cp -r conf /mnt
