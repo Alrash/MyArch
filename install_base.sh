@@ -14,8 +14,8 @@
 
 # # swap, tmp, var part
 OTHER_ROOT=/mnt/home/os
-mkdir /mnt/{var, tmp}
-mkdir -p $OTHER_ROOT/{var, tmp}
+mkdir /mnt/{var,tmp}
+mkdir -p $OTHER_ROOT/{var,tmp}
 # swap
 dd if=/dev/zero of=$OTHER_ROOT/swapfile bs=1G count=2
 mkswap $OTHER_ROOT/swapfile
