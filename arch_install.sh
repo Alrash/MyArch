@@ -92,10 +92,16 @@ pacman-key --populate archlinux && pacman-key --populate archlinuxcn
 pacman -S yay wget --noconfirm
 
 # # i3wm
-pacman -S xf86-video-intel i3 dmenu feh compton oh-my-i3 rxvt-unicode tmux xorg-server xorg-xinit --noconfirm
-pacman -S lightdm lightdm-gtk-greeter
+pacman -S xf86-video-intel i3 rofi feh compton rxvt-unicode tmux xorg-server xorg-xinit --noconfirm
+pacman -S lightdm lightdm-gtk-greeter --noconfirm
 sed -i "s/^#greeter-session=$/greeter-session=lightdm-gtk-greeter/g" /etc/lightdm/lightdm.conf
 systemctl enable lightdm
 
+# # fonts
+pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts adobe-scoure-sans-pro-fonts wqy-zenhei wqy-mircohei --noconfirm
+
+# # others
+pacman -S chromium --noconfirm
+
 # su user
-su $USER
+#su $USER
